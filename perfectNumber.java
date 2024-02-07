@@ -1,12 +1,17 @@
-class HelloWorld {
+
+public class PerfectSquareChecker {
     public static void main(String[] args) {
-     
-        char ch='A';
-        if (Character.isLetter(ch))
-        System.out.println("The character is a Letter:"+true);
-        
-        else if (Character.isDigit(ch))
-         System.out.println("The character is a digit:"+false);
-        
+        int number = 9; // Change this to the number you want to check
+        boolean isPerfectSquare = checkPerfectSquare(number);
+        if (isPerfectSquare) {
+            System.out.println(number + " is a perfect square.");
+        } else {
+            System.out.println(number + " is not a perfect square.");
+        }
+    }
+    public static boolean checkPerfectSquare(int number) {
+        // A number is a perfect square if its square root is an integer
+        double squareRoot = Math.sqrt(number);
+        return squareRoot == Math.floor(squareRoot);
     }
 }
